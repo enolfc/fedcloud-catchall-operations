@@ -29,13 +29,14 @@ jobs:
         EGI_SITE=IFCA-LCG2
         PROJECT_ID=2a7e2cd4b6dc4e609dd934964c1715c6
         eval "$(egicli endpoint token --site $EGI_SITE --project-id $PROJECT_ID)"
-        echo "::set-output name=OS_TOKEN::$OS_TOKEN"
+        echo "::set-output name=os_token::$OS_TOKEN"
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
     - name: Terraform init
       run: |
         export OS_AUTH_URL=https://api.cloud.ifca.es:5000/v3/
         export OS_PROJECT_ID=2a7e2cd4b6dc4e609dd934964c1715c6
+        export OS_TOKEN=${{ steps.os_token.outputs.os_token }}
         cd tf
         terraform init
         terraform plan
