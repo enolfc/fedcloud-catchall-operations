@@ -34,11 +34,8 @@ jobs:
       uses: hashicorp/setup-terraform@v1
     - name: Terraform init
       run: |
-        OS_AUTH_TYPE=v3oidcaccesstoken
-        OS_AUTH_URL=https://api.cloud.ifca.es:5000/v3/
-        OS_IDENTITY_PROVIDER=egi.eu
-        OS_PROJECT_ID=2a7e2cd4b6dc4e609dd934964c1715c6
-        OS_PROTOCOL=openid
+        export OS_AUTH_URL=https://api.cloud.ifca.es:5000/v3/
+        export OS_PROJECT_ID=2a7e2cd4b6dc4e609dd934964c1715c6
         cd tf
         terraform init
         terraform plan
