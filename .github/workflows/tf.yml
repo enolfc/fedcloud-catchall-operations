@@ -1,0 +1,23 @@
+name: 'Terraform'
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup python
+      uses: actions/setup-python@v2
+    - name: Install egicli
+      run: |
+        pip install egicli
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
