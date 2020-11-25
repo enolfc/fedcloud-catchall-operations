@@ -19,5 +19,16 @@ jobs:
     - name: Install egicli
       run: |
         pip install egicli
+    - name: Get OS_TOKEN
+      id: os_token
+      env:
+        CHECKIN_CLIENT_ID: ${{ secrets.CHECKIN_CLIENT_ID }}
+        CHECKIN_CLIENT_SECRET: ${{ secrets.CHECKIN_CLIENT_SECRET }}
+        CHECKIN_REFRESH_TOKEN: ${{ secrets.CHECKIN_REFRESH_TOKEN }}
+      run: |
+        EGI_SITE=IFCA-LCG2
+        PROJECT_ID=2a7e2cd4b6dc4e609dd934964c1715c6
+        eval "$(egicli endpoint token --site $EGI_SITE --project-id $PROJECT_ID)"
+        echo "::set-output name=OS_TOKEN::$OS_TOKEN"
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
