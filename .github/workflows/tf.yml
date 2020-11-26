@@ -32,6 +32,11 @@ jobs:
         echo "::set-output name=os_token::$OS_TOKEN"
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
+    - name: Terraform Format
+      id: fmt
+      run: |
+        cd tf
+        terraform fmt -check
     - name: Terraform init
       run: |
         export OS_AUTH_URL=https://api.cloud.ifca.es:5000/v3/
@@ -39,4 +44,5 @@ jobs:
         export OS_TOKEN=${{ steps.os_token.outputs.os_token }}
         cd tf
         terraform init
+    - name: 
         terraform plan
