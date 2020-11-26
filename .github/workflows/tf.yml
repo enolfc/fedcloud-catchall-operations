@@ -102,7 +102,7 @@ jobs:
         SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
         # this should be confiurable
-        sed -i -e "s/%FLOATING_IP%/${{ needs.terraform.steps.fip.stdout }}" inventory.yaml
+        sed -i -e "s/%FLOATING_IP%/${{ needs.terraform.fip.stdout }}" inventory.yaml
         cat inventory.yaml
         mkdir -p ~/.ssh
         echo -e "${SSH_KEY//_/\\n}" > ~/.ssh/id_rsa
