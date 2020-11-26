@@ -79,6 +79,12 @@ jobs:
       run: |
         cd terraform
         terraform apply -auto-approve
+    - name: Floating IP
+      id: fip
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: |
+        cd terraform
+        terraform outputs floating_ip 
 
   ansible:
     name: 'Ansible'
@@ -90,26 +96,18 @@ jobs:
     - name: Setup python
       uses: actions/setup-python@v2
     - name: Install python packages
-      run: pip install egicli ansible
-    - name: Get OS_TOKEN
+      run: pip install ansible
+    - name: Get ready 
       env:
-        CHECKIN_CLIENT_ID: ${{ secrets.CHECKIN_CLIENT_ID }}
-        CHECKIN_CLIENT_SECRET: ${{ secrets.CHECKIN_CLIENT_SECRET }}
-        CHECKIN_REFRESH_TOKEN: ${{ secrets.CHECKIN_REFRESH_TOKEN }}
+        SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
         # this should be confiurable
-        EGI_SITE=IFCA-LCG2
-        PROJECT_ID=2a7e2cd4b6dc4e609dd934964c1715c6
-        eval "$(egicli endpoint token --site $EGI_SITE --project-id $PROJECT_ID)"
-        echo "::add-mask::$OS_TOKEN"
-        sed -i -e "s/secret/$OS_TOKEN/" terraform/clouds.yaml
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        terraform_wrapper: false
-    - name: Inventory
+        sed -i -e "s/%FLOATING_IP%/${{ needs.terraform.fip.outcome }}" inventory.yaml
+        cat inventory.yaml
+        mkdir -p ~/.ssh
+        echo -e "${SSH_KEY//_/\\n}" > ~/.ssh/id_rsa
+        chmod og-rwx ~/.ssh/id_rsa
+    - name: Configure
       run: |
-        curl -L https://github.com/adammck/terraform-inventory/releases/download/v0.9/terraform-inventory_0.9_linux_amd64.zip | \
-             zcat > terraform-inventory
-        chmod +x terraform-inventory
-        TF_STATE=./terraform/ ./terraform-inventory --list
+        ansible-playbook -i inventory.yaml playbook.yaml
+ 
