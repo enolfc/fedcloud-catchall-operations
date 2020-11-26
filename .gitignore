@@ -2,3 +2,5 @@
 secrets.yaml
 # the inventory
 inventory.yaml
+# terraform stuff
+.terraform
