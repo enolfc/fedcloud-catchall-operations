@@ -85,4 +85,4 @@ jobs:
         curl -L https://github.com/adammck/terraform-inventory/releases/download/v0.9/terraform-inventory_0.9_linux_amd64.zip | \
              zcat > terraform-inventory
         chmod +x terraform-inventory
-        TF_STATE=./terraform ./terraform-inventory --list
+        TF_STATE=./terraform/ ./terraform-inventory --list
