@@ -29,6 +29,7 @@ jobs:
         EGI_SITE=IFCA-LCG2
         PROJECT_ID=2a7e2cd4b6dc4e609dd934964c1715c6
         eval "$(egicli endpoint token --site $EGI_SITE --project-id $PROJECT_ID)"
+        echo "::add-mask::$OS_TOKEN"
         sed -i -e "s/secret/$OS_TOKEN/" tf/clouds.yaml
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
