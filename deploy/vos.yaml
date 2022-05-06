@@ -105,6 +105,8 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.carouseldancing.org:
     auth: "{{ fedcloud_sa }}"
+  vo.cite.gr:
+    auth: "{{ fedcloud_sa }}"
   vo.clarin.eu:
   vo.crmdr.org:
   vo.dariah.eu:
@@ -113,6 +115,7 @@ vos:
   vo.digitbrain.eu:
     auth: "{{ fedcloud_sa }}"
   vo.elixir-europe.org:
+  vo.eoscfuture-sp.panosc.eu:
   vo.emphasisproject.eu:
     auth: "{{ fedcloud_sa }}"
   vo.emsodev.eu:
@@ -121,6 +124,8 @@ vos:
   vo.enes.org:
     auth: "{{ fedcloud_sa }}"
   vo.envri-fair.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.environmental.egi.eu:
     auth: "{{ fedcloud_sa }}"
   vo.eurogeoss.eu:
     auth: "{{ fedcloud_sa }}"
@@ -131,7 +136,10 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.grand-est.fr:
   vo.iiasa.ac.at:
+  vo.inactive-sarscov2.eu:
   vo.indigo-datacloud.eu:
+  vo.lethe-project.eu:
+    auth: "{{ fedcloud_sa }}"
   vo.lifewatch.eu:
     auth: "{{ fedcloud_sa }}"
   "/vo.lifewatch.eu/openbiomap":
@@ -150,11 +158,15 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.obsea.es:
     auth: "{{ fedcloud_sa }}"
+  vo.openrdm.eu:
+    auth: "{{ fedcloud_sa }}"
   vo.operas-eu.org:
     auth: "{{ fedcloud_sa }}"
   vo.pangeo.eu:
     auth: "{{ fedcloud_sa }}"
   vo.panosc.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.phiri.eu:
     auth: "{{ fedcloud_sa }}"
   vo.plocan.eu:
     auth: "{{ fedcloud_sa }}"
