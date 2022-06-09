@@ -1,0 +1,10 @@
+---
+gocdb: CESGA-CLOUD
+endpoint: https://cloud.srv.cesga.es:5000/v3
+vos:
+- name: ops
+  auth:
+    project_id: e92677d7fc0742a7b1e3a33285e2296c
+- name: cesga.es
+  auth:
+    project_id: 7274a80de0954f0f88a594f94642b1fb
