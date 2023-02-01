@@ -1,8 +1,6 @@
 ---
 vos:
-  #
   # Co-manage service account
-  #
   EOServices-vo.indra.es:
     auth: "{{ fedcloud_sa }}"
   benchmark.terradue.com:
@@ -19,13 +17,19 @@ vos:
     auth: "{{ fedcloud_sa }}"
   cryoem.instruct-eric.eu:
     auth: "{{ fedcloud_sa }}"
+  crystal_channelling_simulation.vo.egi.eu:
+    auth: "{{ fedcloud_sa }}"
   d4science.org:
     auth: "{{ fedcloud_sa }}"
   datafurn.eosc-hub.eu:
     auth: "{{ fedcloud_sa }}"
   eosc-synergy.eu:
     auth: "{{ fedcloud_sa }}"
+  fermi-lat.infn.it:
+    auth: "{{ fedcloud_sa }}"
   icecube:
+    auth: "{{ fedcloud_sa }}"
+  in-sar-cubes.c-scale.eu:
     auth: "{{ fedcloud_sa }}"
   ispravision.vo.egi.eu:
     auth: "{{ fedcloud_sa }}"
@@ -67,6 +71,8 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.digitbrain.eu:
     auth: "{{ fedcloud_sa }}"
+  vo.ebrain-health.eu:
+    auth: "{{ fedcloud_sa }}"
   vo.emphasisproject.eu:
     auth: "{{ fedcloud_sa }}"
   vo.emso-eric.eu:
@@ -79,9 +85,15 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.eurogeoss.eu:
     auth: "{{ fedcloud_sa }}"
+  vo.e-rihs.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.fuvex.es:
+    auth: "{{ fedcloud_sa }}"
   vo.geoss.eu:
     auth: "{{ fedcloud_sa }}"
   vo.i-nergy.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.inteligg.com:
     auth: "{{ fedcloud_sa }}"
   vo.lethe-project.eu:
     auth: "{{ fedcloud_sa }}"
@@ -99,6 +111,8 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.obsea.es:
     auth: "{{ fedcloud_sa }}"
+  vo.oipub.com:
+    auth: "{{ fedcloud_sa }}"
   vo.openrdm.eu:
     auth: "{{ fedcloud_sa }}"
   vo.operas-eu.org:
@@ -108,6 +122,8 @@ vos:
   vo.panosc.eu:
     auth: "{{ fedcloud_sa }}"
   vo.phiri.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.pithia.eu:
     auth: "{{ fedcloud_sa }}"
   vo.plocan.eu:
     auth: "{{ fedcloud_sa }}"
@@ -123,24 +139,34 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.ubora-biomedical.org:
     auth: "{{ fedcloud_sa }}"
+  vo.usegalaxy.eu:
+    auth: "{{ fedcloud_sa }}"
   worsica.vo.incd.pt:
     auth: "{{ fedcloud_sa }}"
   wp9-pilot2.eosc-hub.eu:
     auth: "{{ fedcloud_sa }}"
-  #
+
   # Perun based
-  #
   aquamonitor.c-scale.eu:
+    auth: "{{ fedcloud_sa }}"
+  coastmonitor.c-scale.eu:
     auth: "{{ fedcloud_sa }}"
   demo.fedcloud.egi.eu:
     auth: "{{ fedcloud_sa }}"
+  eval.c-scale.eu:
+    auth: "{{ fedcloud_sa }}"
+  gltfca.c-scale.eu:
+    auth: "{{ fedcloud_sa }}"
   hisea.c-scale.eu:
+    auth: "{{ fedcloud_sa }}"
+  lost-salvage.c-scale.eu:
+    auth: "{{ fedcloud_sa }}"
+  plankton.c-scale.eu:
     auth: "{{ fedcloud_sa }}"
   waterwatch.c-scale.eu:
     auth: "{{ fedcloud_sa }}"
-  #
+
   # certificate based VOs
-  #
   biomed:
     auth: "{{ robot_sa }}"
   cesga:
@@ -157,19 +183,18 @@ vos:
     auth: "{{ robot_sa }}"
   ops:
     auth: "{{ robot_sa }}"
+  vo.nbis.se:
+    auth: "{{ robot_sa }}"
 
   # Eduteams based
   vo.eoscfuture-sp.panosc.eu:
     auth: "{{ fedcloud_sa }}"
-  # FIXME: these 2 need to be added to the Check-in configuration
   vo.europlanet-vespa.eu:
     auth: "{{ fedcloud_sa }}"
   lagoproject.net:
     auth: "{{ fedcloud_sa }}"
 
-  #
   # Missing membership
-  #
   chipster.csc.fi:
   cms:
   belle:
@@ -177,11 +202,12 @@ vos:
   drihm.eu:
   opencoast.eosc-hub.eu:
   vo.clarin.eu:
+  vo.complex-systems.eu:  
   vo.envri-fair.eu:
+  vo.envrihub.eu:
   vo.indigo-datacloud.eu:
   vo.lifewatch.eu:
   vo.inactive-sarscov2.eu:
-  vo.nbis.se:
   university.eosc-synergy.eu:
   # unclear
   vo.elixir-europe.org:
