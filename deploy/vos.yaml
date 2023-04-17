@@ -19,6 +19,8 @@ vos:
     auth: "{{ fedcloud_sa }}"
   crystal_channelling_simulation.vo.egi.eu:
     auth: "{{ fedcloud_sa }}"
+  culturalheritage.vo.egi.eu:
+    auth: "{{ fedcloud_sa }}"
   d4science.org:
     auth: "{{ fedcloud_sa }}"
   datafurn.eosc-hub.eu:
@@ -60,6 +62,10 @@ vos:
   vo.agiliacenter.com:
     auth: "{{ fedcloud_sa }}"
   vo.bd4nrg.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.beamide.com:
+    auth: "{{ fedcloud_sa }}"
+  vo.builtrix.tech:
     auth: "{{ fedcloud_sa }}"
   vo.carouseldancing.org:
     auth: "{{ fedcloud_sa }}"
@@ -136,6 +142,8 @@ vos:
   vo.sphinxsys.org:
     auth: "{{ fedcloud_sa }}"
   vo.stars4all.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.thepund.it:
     auth: "{{ fedcloud_sa }}"
   vo.ubora-biomedical.org:
     auth: "{{ fedcloud_sa }}"
