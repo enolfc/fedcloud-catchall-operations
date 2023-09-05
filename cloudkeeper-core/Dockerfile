@@ -8,12 +8,12 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3015, DL3008
 RUN apt-get update \
     && apt-get -qy install --fix-missing --no-install-recommends curl qemu-utils \
-    && curl -L http://repository.egi.eu/sw/production/cas/1/current/repo-files/egi-trustanchors.list > /etc/apt/sources.list.d/egi-trustanchors.list \
     && curl https://dl.igtf.net/distribution/igtf/current/GPG-KEY-EUGridPMA-RPM-3 | apt-key add - \
+    && echo 'deb http://repository.egi.eu/sw/production/cas/1/current egi-igtf core' \
+             > /etc/apt/sources.list.d/cas.list \
     && apt-get update \
-    && apt-get -qy install --fix-missing \
-       ca-policy-egi-core \
-       fetch-crl \
+    && apt-get -qy install --fix-missing fetch-crl \
+    && apt-get -qy install --fix-missing ca-policy-egi-core \
     && apt-get clean autoclean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* \
@@ -21,7 +21,8 @@ RUN apt-get update \
 
 RUN fetch-crl -p 2 -T 30 || exit 0
 
-RUN gem install cloudkeeper -v 1.7.1
+RUN gem install google-protobuf -v 3.23.4 \
+    && gem install cloudkeeper -v 1.7.1
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

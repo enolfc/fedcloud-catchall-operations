@@ -39,8 +39,6 @@ vos:
     auth: "{{ fedcloud_sa }}"
   med.semmelweis-univ.hu:
     auth: "{{ fedcloud_sa }}"
-  minka-sdg.org:
-    auth: "{{ fedcloud_sa }}"
   mswss.ui.savba.sk:
     auth: "{{ fedcloud_sa }}"
   mteam.data.kit.edu:
@@ -59,9 +57,11 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.access.egi.eu:
     auth: "{{ fedcloud_sa }}"
-  vo.agiliacenter.com:
+  vo.ai4eosc.eu:
     auth: "{{ fedcloud_sa }}"
   vo.bd4nrg.eu:
+    auth: "{{ fedcloud_sa }}"
+  vo.binare-oy.eu:
     auth: "{{ fedcloud_sa }}"
   vo.beamide.com:
     auth: "{{ fedcloud_sa }}"
@@ -91,6 +91,8 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.eurogeoss.eu:
     auth: "{{ fedcloud_sa }}"
+  vo.eurosea.marine.ie:
+    auth: "{{ fedcloud_sa }}"
   vo.e-rihs.eu:
     auth: "{{ fedcloud_sa }}"
   vo.fuvex.es:
@@ -99,7 +101,11 @@ vos:
     auth: "{{ fedcloud_sa }}"
   vo.i-nergy.eu:
     auth: "{{ fedcloud_sa }}"
+  vo.imagine-ai.eu:
+    auth: "{{ fedcloud_sa }}"
   vo.inteligg.com:
+    auth: "{{ fedcloud_sa }}"
+  vo.latitudo40.com.eu:
     auth: "{{ fedcloud_sa }}"
   vo.lethe-project.eu:
     auth: "{{ fedcloud_sa }}"
@@ -108,8 +114,6 @@ vos:
   vo.max-centre.eu:
     auth: "{{ fedcloud_sa }}"
   vo.mightee.idia.za:
-    auth: "{{ fedcloud_sa }}"
-  vo.neanias.eu:
     auth: "{{ fedcloud_sa }}"
   vo.nextgeoss.eu:
     auth: "{{ fedcloud_sa }}"
@@ -132,8 +136,6 @@ vos:
   vo.pithia.eu:
     auth: "{{ fedcloud_sa }}"
   vo.plocan.eu:
-    auth: "{{ fedcloud_sa }}"
-  vo.policycloud.eu:
     auth: "{{ fedcloud_sa }}"
   vo.projectescape.eu:
     auth: "{{ fedcloud_sa }}"

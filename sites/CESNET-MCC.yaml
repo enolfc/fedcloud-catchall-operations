@@ -96,9 +96,6 @@ vos:
 - name: vo.pangeo.eu
   auth:
     project_id: 05e0ff6e03774082aadacc75bfc1d783
-- name: vo.neanias.eu
-  auth:
-    project_id: bc7b84252d3c4a42a6d1d346865a7631
 - name: vo.environmental.egi.eu
   auth:
     project_id: 29e6fbf618984a0c98ffcdf0222ad815
@@ -123,3 +120,9 @@ vos:
 - name: vo.thepund.it
   auth:
     project_id: a0faee5136134d1ab1e62385c3e45c75
+- name: vo.enes.org
+  auth:
+    project_id: 786566209a7444f89a561172fa28e117
+- name: vo.envrihub.eu
+  auth:
+    project_id: 61d8e5a65aff45fabc41ae954e905d11
